@@ -1,22 +1,23 @@
-# Introduction
-Trained HPGNN Models
+# Pre-Trained HPGNN Models
 
-This subdirectory contains the trained models, hyperparameters, and scalers for water quality parameters. These models were developed using the provided training datasets and can be used to generate water quality products.
+## Description
 
-# Contents
+This subdirectory contains the pre-trained models, hyperparameters, and scalers for water quality parameters. These models were developed using the provided training datasets and can be used to generate water quality products.
 
-* For each water quality parameter (aCDOM440, Chla, Secchi_depth, TSS, Turbidity), the following files are provided:
+## Contents
+
+* For each water quality parameter (aCDOM(440), Chla, Secchi_depth, TSS, Turbidity), the following files are provided:
 
 * File	Description
     *_HPGNN_Model.h5	Trained HPGNN model (Keras .h5 format)
     *_HPGNN_Model_Hyperparams.json	JSON file containing the hyperparameters and loss function weights used for training
     *_Scaler.save	Saved MinMaxScaler object for normalizing input features
 
-# Usage
+## Usage
 
-* These models can be used to generate water quality products using the python script given in the generate_products subdirectory. 
+* These models can be used to generate water quality products using the python script given in the product generation subdirectory. 
 
-# Notes
+## Notes
 
 * Ensure that the input data is preprocessed and scaled consistently with the training data.
 
