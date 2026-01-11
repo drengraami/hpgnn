@@ -1,7 +1,8 @@
-# Introduction
-Models Description: Baseline DNN models for aCDOM(440) / Chla / Secchi_depth / TSS / Turbidity Estimation
+# Baseline DNN models for aCDOM(440) / Chla / Secchi_depth / TSS / Turbidity Estimation
 
-This subdirectory includes codes for purely data-driven Deep Neural Network (DNN) models used as a baseline model for estimating olored dissolved organic matter absorption at 440 nm (aCDOM(440)), Chlorophyll-a, Secchi Disk Depth, Total Suspended Solids, and Turbidity from Sentinel-2 reflectance data. Unlike the HPGNN models, these models do not incorporate any other constraint and relies solely on Mean Squared Error (MSE).
+## Description
+
+This subdirectory includes codes for purely data-driven Deep Neural Network (DNN) models used as a baseline model for estimating Absorption of Colored Dissolved Organic Matter at 440 nm, Chlorophyll-a, Secchi Disk Depth, Total Suspended Solids, and Turbidity from Sentinel-2 reflectance data. Unlike the HPGNN models, these models do not incorporate any other constraint and relies solely on Mean Squared Error (MSE).
 
 *  Input Data and Preprocessing
 
@@ -19,7 +20,7 @@ This subdirectory includes codes for purely data-driven Deep Neural Network (DNN
 
     * Data split: 80% training / 20% testing
 
-# Model Architecture
+## Model Architecture
 
 * Fully connected Deep Neural Network
 
@@ -37,7 +38,7 @@ This subdirectory includes codes for purely data-driven Deep Neural Network (DNN
 
 * Output layer: Single neuron predicting target variable
 
-# Hyperparameter Optimization
+## Hyperparameter Optimization
 
 * Optimization method: Bayesian Optimization (Keras-Tuner)
 
@@ -53,7 +54,7 @@ This subdirectory includes codes for purely data-driven Deep Neural Network (DNN
 
 * Objective: Minimize validation MSE
 
-# Model Training
+## Model Training
 
 * Optimizer: Adam
 
@@ -69,7 +70,7 @@ This subdirectory includes codes for purely data-driven Deep Neural Network (DNN
 
     * Learning rate reduction on plateau
 
-# Model Evaluation
+## Model Evaluation
 
 * Model performance is evaluated using:
 
@@ -87,10 +88,11 @@ This subdirectory includes codes for purely data-driven Deep Neural Network (DNN
 
     * Matchup test dataset
 
-# Requirements
+## Requirements
 
 * Python
 
 * tensorflow, keras, keras-tuner, pandas, numpy, scikit-learn
+
 
 
