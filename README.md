@@ -6,62 +6,63 @@ This repository contains the code, data, and models for modeling and generating 
 
 The repository is organized into three main directories:
 
-code/ – Python and JavaScript scripts for model development, ablation studies, data downloading, product generation, and SHAP analysis and README files for detailed explanation of each subdirectory.
+code/ – Python and JavaScript scripts for model development, ablation studies, data downloading, product generation, and SHAP analysis and README files for brief explanation of each subdirectory.
 
-data/ – Contains training, validation, and testing datasets (Excel files) and example Sentinel-2 images with cloud mask and README files for detailed explanation of data.
+data/ – Contains training, validation, and testing datasets (Excel files) and example Sentinel-2 image with cloud mask (TIF files) and README file for brief explanation of data.
 
-models/ – Pre-trained models and associated hyperparameters and scalers for generating water quality products and README file for detailed explanation of models.
+models/ – Pre-trained models and associated hyperparameters and scalers for generating water quality products and README file for brief explanation of models.
 
 ## Repository Structure
 
 ```
 
-HPGNN/
+hpgnn/
 │
 ├── code/
-│   ├── ablation_study/                     # Ablation study scripts for each water quality parameter
+│   ├── ablation study/                     # Ablation study scripts for each water quality parameter
 │   │   ├── ablation_study_acdom.py
 │   │   ├── ablation_study_chla.py
 │   │   ├── ablation_study_sdd.py
 │   │   ├── ablation_study_tss.py
 │   │   ├── ablation_study_turbidity.py
-│   │   └── README.md
+│   │   └── README.md                       # Provides brief explanation about ablation study
 │   │
-│   ├── dnn_models/                         # Scripts to train and tune DNN models for each parameter
+│   ├── dnn models/                         # Scripts to train and tune DNN models for each parameter
 │   │   ├── sentinel_dnn_acdom_tuner.py
 │   │   ├── sentinel_dnn_chla_tuner.py
 │   │   ├── sentinel_dnn_sdd_tuner.py
 │   │   ├── sentinel_dnn_tss_tuner.py
 │   │   ├── sentinel_dnn_turbidity_tuner.py
-│   │   └── README.md
+│   │   └── README.md                       # Provides brief explanation about DNN models
 │   │
-│   ├── downloading_sentinel-2/             # Scripts to download Sentinel-2 mosaics and surface reflectance
+│   ├── downloading sentinel-2/             # Scripts to download Sentinel-2 mosaic and surface reflectance
 │   │   ├── download_sentinel-2_mosaic.js
-│   │   ├── download_sentinel-2_surfacereflectance_mosaic.js
-│   │   └── README.md
+│   │   ├── download_sentinel-2_surfacereflectance_matchup.js
+│   │   └── README.md                       # Provides brief explanation about downloading Sentinel-2 mosaic and surface reflectance
 │   │
-│   ├── hpgnn_models/                       # Scripts to train and tune HPGNN models for each parameter
+│   ├── hpgnn models/                       # Scripts to train and tune HPGNN models for each parameter
 │   │   ├── sentinel_hpgnn_acdom_tuner.py
 │   │   ├── sentinel_hpgnn_chla_tuner.py
 │   │   ├── sentinel_hpgnn_sdd_tuner.py
 │   │   ├── sentinel_hpgnn_tss_tuner.py
 │   │   ├── sentinel_hpgnn_turbidity_tuner.py
-│   │   └── README.md
+│   │   └── README.md                       # Provides brief explanation about HPGNN models
 │   │
-│   ├── product_generation/                 # Generate water quality products from Sentinel-2 using pre-trained models
+│   ├── product generation/                 # Generate water quality products from Sentinel-2 using pre-trained models
 │   │   ├── generate_products.py
-│   │   └── README.md
+│   │   └── README.md                       # Provides brief explanation about water quality product generation
 │   │
-│   └── shap_analysis/                      # Scripts for SHAP explainability analysis
+│   └── shap analysis/                      # Scripts for SHAP explainability analysis
 │       ├── shap_analysis.py
-│       └── README.md
+│       └── README.md                       # Provides brief explanation about SHAP analysis
 │
 ├── data/                                            # Datasets for training, validation, and testing
 │   ├── simulated_data_training_validation.xlsx      # 80/20 split for training and validation
 │   ├── matchup_data_test.xlsx                       # Data for model testing
 │   ├── brazil_lakes_independent_dataset.xlsx        # Independent test dataset
 │   ├── trout_14092025.tif                           # Sentinel-2 mosaic image (first 8 bands) example
-│   └── trout_14092025_cloud.tif                     # Corresponding cloud mask
+│   ├── trout_14092025_cloud.tif                     # Corresponding cloud mask
+│   └── README.md                                    # Provides brief explanation about datasets used
 │
 ├── models/                                  # Pre-trained models with hyperparameters and scalers
 │   ├── aCDOM440_HPGNN_Model.h5
@@ -70,7 +71,16 @@ HPGNN/
 │   ├── Chla_HPGNN_Model.h5
 │   ├── Chla_HPGNN_Model_Hyperparams.json
 │   ├── Chla_Scaler.save
-│   ├── ... (other parameters)
+│   ├── Secchi_depth_HPGNN_Model.h5
+│   ├── Secchi_depth_HPGNN_Model_Hyperparams.json
+│   ├── Secchi_depth_Scaler.save
+│   ├── TSS_HPGNN_Model.h5
+│   ├── TSS_HPGNN_Model_Hyperparams.json
+│   ├── TSS_Scaler.save
+│   ├── Turbidity_HPGNN_Model.h5
+│   ├── Turbidity_HPGNN_Model_Hyperparams.json
+│   ├── Turbidity_Scaler.save
+│   └── README.md                            # Provides brief explanation about pre-trained models
 │
 └── README.md                                # Main README (this file)
 ```
@@ -121,15 +131,15 @@ Product Generation
 
   * Data Preparation: Place your Sentinel-2 images and cloud masks in a folder.
   
-  * Generate Products: Use code/product_generation/generate_products.py with pre-trained models.
+  * Generate Products: Use code/product generation/generate_products.py with pre-trained models.
 
 Model Development and Interpretation
 
   * Data Preparation: Place your training, vlaidation and test datasets in a folder.
   
-  * Training Models: Use the scripts in code/dnn_models or code/hpgnn_models to train models for each parameter.
+  * Training Models: Use the scripts in code/dnn models or code/hpgnn models to train models for each parameter.
 
-  * Explainability: Run code/shap_analysis/shap_analysis.py to generate SHAP plots for feature importance.
+  * Explainability: Run code/shap analysis/shap_analysis.py to generate SHAP plots for feature importance.
 
 
 ## Citation
