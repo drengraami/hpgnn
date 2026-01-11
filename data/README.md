@@ -34,7 +34,7 @@ This subdirectory contains all the datasets used for training, testing, and demo
 
     * It contains matchup Sentinel-2 surface reflectance against BRAZA - a bio-optical database for the remote sensing of water quality in BRAZil coAstal and inland waters extracted using python code given in downloading sentinel-2 subdirectory
 
-* Each sheet contains spectral reflectance bands (B1–B8) and target water quality parameters, along with other metadata columns as described in meta_data.
+* Each sheet contains spectral reflectance bands (B1–B8) and target water quality parameters, along with other columns as described in the meta_data sheet
 
 ## TIFF Files (Example: Trout Lake, USA)
 
@@ -51,3 +51,4 @@ This subdirectory contains all the datasets used for training, testing, and demo
 * TIFF files are example Sentinel-2 images for demonstration purposes; processing with cloud masking is supported in the pipeline.
 
 * All datasets are structured to maintain consistent column naming across sheets and files.
+
