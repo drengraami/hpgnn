@@ -6,11 +6,11 @@ This subdirectory provides scripts to extract and preprocess Sentinel-2 Surface 
 
 # Python File: Point-based SR Extraction
 
-* Purpose: Extract cloud free SR data for lake points, and compute NDWI to be used for testing of models
+* Purpose: Extract cloud free SR data for in situ data points, and compute NDWI to be used for testing of models
 
 * Steps:
 
-    * Load lake coordinates and dates from Excel (Raw data from GLORIA and Brazilian Lakes)
+    * Load in situ data coordinates and dates from Excel (Raw data from GLORIA and Brazilian Lakes)
 
     * Find nearest Sentinel-2 image (±3 days)
 
@@ -46,4 +46,5 @@ This subdirectory provides scripts to extract and preprocess Sentinel-2 Surface 
 
 * Output: GeoTIFF mosaic and cloud mask
 
-* Note: This code can used on Google Earth Engine Code Editor
+* Note: This code can be used on Google Earth Engine Code Editor
+
