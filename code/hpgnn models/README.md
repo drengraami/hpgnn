@@ -1,10 +1,12 @@
-Models Description: HPGNN models for aCDOM(440) / Chla / Secchi_depth / TSS / Turbidity Estimation
+# HPGNN models for aCDOM(440) / Chla / Secchi_depth / TSS / Turbidity Estimation
 
-This subdirectory contains codes for Hybrid Physics-Guided Neural Network (HPGNN) models for estimating colored dissolved organic matter absorption at 440 nm (aCDOM(440)), Chlorophyll-a, Secchi Disk Depth, Total Suspended Solids, and Turbidity using Sentinel-2 surface reflectance bands.
+## Description
+
+This subdirectory contains codes for Hybrid Physics-Guided Neural Network (HPGNN) models for estimating Absorption of Colored Dissolved Organic Matter at 440 nm, Chlorophyll-a, Secchi Disk Depth, Total Suspended Solids, and Turbidity using Sentinel-2 surface reflectance bands.
 
 The models integrate data fidelity, statistical regularization, and physics-guided constraints to guide the model training and validation for producing stable and physically plausible predictions.
 
-# Input Data
+## Input Data
 
 * Input features: Sentinel-2 reflectance bands: B1, B2, B3, B4, B5, B6, B7, B8
 
@@ -12,7 +14,7 @@ The models integrate data fidelity, statistical regularization, and physics-guid
 
 * Data source: simulated_data_training_validation and matchup_data_test excel files given in data subdirectory
 
-# Preprocessing
+## Preprocessing
 
 * Outlier removal: Quantile-based filtering (10th–90th percentile) on the target variable
 
@@ -20,7 +22,7 @@ The models integrate data fidelity, statistical regularization, and physics-guid
 
 * Data split: 80% training / 20% validation
 
-# Model Architecture
+## Model Architecture
 
 * Fully connected deep neural network (DNN)
 
@@ -38,7 +40,7 @@ The models integrate data fidelity, statistical regularization, and physics-guid
 
 * Output: Single neuron predicting target variable
 
-# Physics-Guided Hybrid Loss Function
+## Physics-Guided Hybrid Loss Function
 
 * The model is trained using a custom hybrid loss function that combines follwoing loss compoents for data-fidelity with physics-guided and statistical regularization constraints:
 
@@ -54,7 +56,7 @@ The models integrate data fidelity, statistical regularization, and physics-guid
 
 * Loss weights are dynamically updated during training using a custom callback to gradually strengthen constraints without destabilizing learning.
 
-# Hyperparameter Optimization
+## Hyperparameter Optimization
 
 * Optimization method: Bayesian Optimization (Keras-Tuner)
 
@@ -72,7 +74,7 @@ The models integrate data fidelity, statistical regularization, and physics-guid
 
 * Objective: Minimize validation MAE
 
-# Model Training
+## Model Training
 
 * Optimizer: Adam
 
@@ -88,7 +90,7 @@ The models integrate data fidelity, statistical regularization, and physics-guid
 
     * Adaptive physics-weight adjustment
 
-# Model Evaluation
+## Model Evaluation
 
 * Performance is assessed using:
 
@@ -106,7 +108,7 @@ The models integrate data fidelity, statistical regularization, and physics-guid
 
     * Matchup test dataset
 
-# Model Outputs
+## Model Outputs
 
 * Trained HPGNN model (.h5)
 
@@ -114,12 +116,11 @@ The models integrate data fidelity, statistical regularization, and physics-guid
 
 * Performance metrics printed to console
 
-# Requirements
+## Requirements
 
 * Python
 
 * tensorflow, keras, keras-tuner, pandas, numpy, scikit-learn
 
-# Key Contribution
 
 This HPGNN framework demonstrates how physics-guided constraints and empirical bio-optical knowledge can be embedded into deep learning models to improve robustness, interpretability, and physical realism in satellite-based water quality retrievals.
