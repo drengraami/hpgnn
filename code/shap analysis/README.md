@@ -1,9 +1,10 @@
-# Introduction
-SHAP analysis for HPGNN models developed for aCDOM(440) / Chla / Secchi_depth / TSS / Turbidity Estimation
+# SHAP analysis for HPGNN models developed for aCDOM(440) / Chla / Secchi_depth / TSS / Turbidity Estimation
+
+## Description
 
 This subdirectory contains script for interpreting HPGNN models' predictions of water quality parameters using SHAP (SHapley Additive exPlanations).
 
-# Purpose
+## Purpose
 
 * Quantify feature importance of Sentinel-2 spectral bands on water quality targets: aCDOM440, Chla, Secchi_depth, TSS, and Turbidity
 
@@ -11,7 +12,7 @@ This subdirectory contains script for interpreting HPGNN models' predictions of 
 
 * Identify positive or negative impacts of spectral bands on predictions.
 
-# Workflow
+## Workflow
 
 1) Load and preprocess data (simulated_data_training_validation and matchup_data_test excel files given in data subdirectory)
 
@@ -43,15 +44,16 @@ This subdirectory contains script for interpreting HPGNN models' predictions of 
 
     * Feature ranking and directionality of effects.
 
-# Requirements
+## Requirements
 
 * Python
 
 * tensorflow, keras, shap, pandas, numpy, matplotlib, seaborn, scikit-learn
 
-# Output
+## Output
 
 * SHAP plots (global and local)
 
 * Feature importance ranking printed in console
+
 
