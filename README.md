@@ -6,7 +6,7 @@ This repository contains the code, data, and models for modeling and generating 
 
 The repository is organized into three main directories:
 
-code/ – Python and JavaScript scripts for model development, ablation studies, data downloading, product generation, and SHAP analysis and README files for brief explanation of each subdirectory.
+code/ – Python and JavaScript scripts for models development, ablation studies, data downloading, product generation, and SHAP analysis and README files for brief explanation of each subdirectory.
 
 data/ – Contains training, validation, and testing datasets (Excel files) and example Sentinel-2 image with cloud mask (TIF files) and README file for brief explanation of data.
 
@@ -91,9 +91,11 @@ Objective: To model key optically active water quality parameters in inland lake
 
 Models:
 
-The HPGNN models are developed using feedforward neural network (FFNN) with tunable hyperparameters optimized via the Bayesian Optimization Tuner method, exploring a predefined hyperparameter optimization search space and convergence criteria while training with a custom hybrid loss function. We formulated a custom hybrid loss function combining data fidelity, statistical regularization, and physics-guided constraints to guide the model training and validation for producing stable and physically plausible predictions. Specifically, empirical bio-optical relationships, non-negativity constraints, gradient regularization, smoothness, uncertainty, and variance-based penalties are jointly integrated with data fidelity loss (MSE) to enforce physical plausibility, statistical robustness, and empirical consistency.
+The HPGNN models are developed using feedforward neural network (FFNN) with tunable hyperparameters optimized via the Bayesian Optimization Tuner method, exploring a predefined hyperparameter optimization search space and convergence criteria while training with a custom hybrid loss function. We formulated a custom hybrid loss function combining data fidelity, statistical regularization, and physics-guided constraints to guide the model training and validation for producing stable and physically plausible predictions. Specifically, physics-guided constraints (empirical bio-optical relationships, non-negativity constraints, and gradient regularization), statistical regularization constraints (smoothness, uncertainty, and variance-based penalties) are jointly integrated with data fidelity loss (MSE) in the hybrid loss function to enforce physical plausibility, statistical robustness, and empirical consistency.
 
-The DNN models are also developed to serve as benchmark or baseline models to quantify the added value of hybrid loss function utilized in the HPGNN models and compare performance to highlight the benefits of incorporating physical knowledge into deep learning frameworks for satellite-based water quality retrieval.
+The DNN models are also developed and trained using MSE loss only to serve as benchmark or baseline models to quantify the added value of hybrid loss function utilized in the HPGNN models and compare performance to highlight the benefits of incorporating physical knowledge into deep learning frameworks for satellite-based water quality retrieval.
+
+Ablation study is also conducted to assess the significance of each loss component on the HPGNN models’ performance. The models are developed by removing each constraint from hybrid loss function used in the HPGNN models. Moreover, the HPGNN models are also trained with MSE + statistical regularization constraints and MSE + physics-guided constraints to assess the performance with each category of constraints.
 
 Parameters Modeled:
 
@@ -111,11 +113,13 @@ Explainability: SHAP analysis is included to interpret the impact of each spectr
 
 Data: 
 
-  * GLORIA dataset is used for training, validation and testing of the HPGNN and DNN models
+  * Simulated Sentinel-2 remote sensing reflectnace transformed from GLORIA dataset is used for training and validation of the HPGNN and DNN models
+
+  * Sentinel-2 matchup surface reflectance against GLORIA dataset is used for testing of the HPGNN and DNN models 
   
-  * BRAZA dataset is used for indepnednt testing of the HPGNN models
+  * Sentinel-2 matchup surface reflectance against BRAZA dataset is used for independent testing of the HPGNN models
   
-  * Sentinel-2 surface reflectance and imagery are utilized
+  * Sentinel-2 imagery is utilized for water quality product generation
 
 # Getting Started
 
