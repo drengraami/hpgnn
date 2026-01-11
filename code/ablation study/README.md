@@ -1,9 +1,10 @@
-# Introduction
-Models Description: Ablation study models for aCDOM(440) / Chla / Secchi_depth / TSS / Turbidity Estimation
+# Ablation study models for aCDOM(440) / Chla / Secchi_depth / TSS / Turbidity Estimation
 
-This subdirectory includes codes to perform systematic ablation study within the HPGNN framework for 440 nm (aCDOM(440)), Chlorophyll-a, Secchi Disk Depth, Total Suspended Solids, and Turbidity retrieval from Sentinel-2 reflectance data. The objective is to quantify the individual and combined contributions of physics-guided and statistical regularization constraints, while keeping the tuned HPGNN architecture and hyperparameters fixed.
+## Description
 
-# Data and Preprocessing
+This subdirectory includes codes to perform systematic ablation study within the HPGNN framework for Absorption of Colored Dissolved Organic Matter at 440 nm, Chlorophyll-a, Secchi Disk Depth, Total Suspended Solids, and Turbidity retrieval from Sentinel-2 reflectance data. The objective is to quantify the individual and combined contributions of physics-guided and statistical regularization constraints, while keeping the tuned HPGNN architecture and hyperparameters fixed.
+
+## Data and Preprocessing
 
 * Input features: Sentinel-2 reflectance bands: B1, B2, B3, B4, B5, B6, B7, B8
 
@@ -19,7 +20,7 @@ This subdirectory includes codes to perform systematic ablation study within the
 
     * Data split: 80% training / 20% validation
 
-# HPGNN Architecture (Fixed)
+## HPGNN Architecture (Fixed)
 
 * All ablation experiments use the same HPGNN architecture, defined by prior hyperparameter tuning:
 
@@ -37,9 +38,9 @@ This subdirectory includes codes to perform systematic ablation study within the
 
     * Single regression output for target variable
 
-# No changes are made to the network structure during ablation experiments.
+* No changes are made to the network structure during ablation experiments.
 
-# Hyperparameter Usage (Pre-tuned)
+## Hyperparameter Usage (Pre-tuned)
 
 * Hyperparameters were optimized beforehand using Bayesian Optimization
 
@@ -55,9 +56,9 @@ This subdirectory includes codes to perform systematic ablation study within the
 
     * Batch size
 
-    This ensures that performance differences arise solely from loss-function modifications, not from re-optimization.
+* This ensures that performance differences arise solely from loss-function modifications, not from re-optimization.
 
-# Hybrid Physics-Guided Loss Function
+## Hybrid Physics-Guided Loss Function
 
 * The baseline HPGNN model integrates data-fidelity with physics-guided and statistical regularization constraints through a composite loss function:
 
@@ -69,7 +70,7 @@ This subdirectory includes codes to perform systematic ablation study within the
     * Smoothness Loss
     * Gradient Regularization
 
-# Ablation Configurations
+## Ablation Configurations
 
 * Ablation experiments are conducted by selectively removing loss components, while all other settings remain unchanged:
 
@@ -93,7 +94,7 @@ This subdirectory includes codes to perform systematic ablation study within the
 
 * Each configuration represents a controlled modification of the baseline HPGNN.
 
-# Training Strategy (Identical Across Ablations)
+## Training Strategy (Identical Across Ablations)
 
 * Optimizer: Adam (tuned learning rate)
 
@@ -109,7 +110,7 @@ This subdirectory includes codes to perform systematic ablation study within the
 
     * Adaptive loss-weight updating
 
-# Evaluation Metrics
+## Evaluation Metrics
 
 * Model performance is evaluated on:
 
@@ -127,26 +128,14 @@ This subdirectory includes codes to perform systematic ablation study within the
 
     * MAE
 
-# Model Outputs
+## Model Outputs
 
 * Trained model (.h5)
 
 * Results are summarized to enable direct quantitative comparison across ablation configurations.
 
-# Requirements
+## Requirements
 
 * Python
 
 * tensorflow, keras, keras-tuner, pandas, numpy, scikit-learn, os
-
-# Purpose and Significance
-
-This ablation study:
-
-Isolates the true impact of physics-guided constraints
-
-Demonstrates how bio-optical knowledge improves generalization
-
-Avoids confounding effects from re-tuning
-
-Provides transparent justification for the full HPGNN loss formulation
