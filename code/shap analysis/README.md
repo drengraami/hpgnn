@@ -24,7 +24,7 @@ This subdirectory contains script for interpreting HPGNN models' predictions of 
 
     * Load models and corresponding hyperparameters (learning rate, adaptive weights w1–w6).
 
-3) mpute SHAP values
+3) Compute SHAP values
 
     * Use DeepExplainer with background samples from training data.
 
@@ -55,5 +55,6 @@ This subdirectory contains script for interpreting HPGNN models' predictions of 
 * SHAP plots (global and local)
 
 * Feature importance ranking printed in console
+
 
 
