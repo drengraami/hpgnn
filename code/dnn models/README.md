@@ -2,7 +2,7 @@
 
 ## Description
 
-This subdirectory includes codes for purely data-driven Deep Neural Network (DNN) models used as a baseline model for estimating Absorption of Colored Dissolved Organic Matter at 440 nm, Chlorophyll-a, Secchi Disk Depth, Total Suspended Solids, and Turbidity from Sentinel-2 reflectance data. Unlike the HPGNN models, these models do not incorporate any other constraint and relies solely on Mean Squared Error (MSE).
+This subdirectory includes codes for purely data-driven Deep Neural Network (DNN) models used as baseline models for estimating Absorption of Colored Dissolved Organic Matter at 440 nm, Chlorophyll-a, Secchi Disk Depth, Total Suspended Solids, and Turbidity from Sentinel-2 reflectance data. Unlike the HPGNN models, these models do not incorporate any other constraint and relies solely on Mean Squared Error (MSE).
 
 *  Input Data and Preprocessing
 
@@ -93,6 +93,7 @@ This subdirectory includes codes for purely data-driven Deep Neural Network (DNN
 * Python
 
 * tensorflow, keras, keras-tuner, pandas, numpy, scikit-learn
+
 
 
 
