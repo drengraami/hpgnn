@@ -4,7 +4,8 @@
 
 This subdirectory contains codes for Hybrid Physics-Guided Neural Network (HPGNN) models for estimating Absorption of Colored Dissolved Organic Matter at 440 nm, Chlorophyll-a, Secchi Disk Depth, Total Suspended Solids, and Turbidity using Sentinel-2 surface reflectance bands.
 
-The models integrate data fidelity, statistical regularization, and physics-guided constraints to guide the model training and validation for producing stable and physically plausible predictions.
+The models integrate data fidelity, statistical regularization, and physics-guided constraints to guide the model training and validation for producing stable and physically plausible predictions. This HPGNN framework demonstrates how physics-guided constraints can be embedded into deep learning models to improve robustness, interpretability, and physical realism in satellite-based water quality retrievals.
+
 
 ## Input Data
 
@@ -122,5 +123,3 @@ The models integrate data fidelity, statistical regularization, and physics-guid
 
 * tensorflow, keras, keras-tuner, pandas, numpy, scikit-learn
 
-
-This HPGNN framework demonstrates how physics-guided constraints and empirical bio-optical knowledge can be embedded into deep learning models to improve robustness, interpretability, and physical realism in satellite-based water quality retrievals.
