@@ -1,17 +1,18 @@
-# Introduction
-Sentinel-2 Water Quality Predictions with HPGNN Models
+# Sentinel-2 Water Quality Predictions with the HPGNN Models
 
-This subdirectory contains script to predict multiple water quality parameters (aCDOM440, Chla, Secchi_depth, TSS, and Turbidity) from Sentinel-2 imagery using pretrained HPGNN models.
+## Description
 
-# Purpose
+This subdirectory contains script to predict multiple water quality parameters (aCDOM(440), Chla, Secchi_depth, TSS, and Turbidity) from Sentinel-2 imagery and generate products using pretrained HPGNN models.
 
-* Predict aCDOM440, Chla, Secchi_depth, TSS, and Turbidity for water bodies.
+## Purpose
+
+* Predict aCDOM(440), Chla, Secchi_depth, TSS, and Turbidity for water bodies.
 
 * Handle cloud masking and water pixel selection.
 
 * Generate GeoTIFF outputs and RGB overlay visualizations.
 
-# Workflow
+## Workflow
 
 1) Load and preprocess Sentinel-2 images (Given in data subdirectory) 
 
@@ -21,9 +22,9 @@ This subdirectory contains script to predict multiple water quality parameters (
 
     * Apply optional cloud mask
 
-2) Load pretrained models and scalers
+2) Load pretrained models and scalers (Given in models subdirectory)
 
-    * HPGNN models for all target parameters
+    * The HPGNN models for all target parameters
 
     * Load saved hyperparameters and MinMaxScalers
 
@@ -37,17 +38,17 @@ This subdirectory contains script to predict multiple water quality parameters (
 
 4) Save outputs
 
-    *  GeoTIFF files for each parameter: <parameter>_prediction.tif
+    * GeoTIFF files for each parameter: <parameter>_prediction.tif
 
     * RGB overlay visualization with color-mapped predictions
 
-# Requirements
+## Requirements
 
 * Python
 
 * tensorflow, keras, numpy, pandas, rasterio, matplotlib, scikit-learn, joblib, matplotlib_scalebar
 
-# Output
+## Output
 
 * GeoTIFF files for each predicted water quality parameter
 
