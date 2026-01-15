@@ -148,4 +148,15 @@ Model Development and Interpretation
 
 ## Citation
 
-Please cite this repository if you use the models or data in your research.
+Please cite this repository and linked paper if you use the code, models or data in your research.
+
+@article{ALI2026103611,
+title = {Explainable Hybrid Physics-Guided Neural Network (HPGNN) for diverse Inland Lakes water quality inversion},
+journal = {Ecological Informatics},
+pages = {103611},
+year = {2026},
+issn = {1574-9541},
+doi = {https://doi.org/10.1016/j.ecoinf.2026.103611},
+url = {https://www.sciencedirect.com/science/article/pii/S1574954126000178},
+author = {Aamir Ali and Guanhua Zhou and Franz Pablo Antezana Lopez and Cheng Jiang and Guifei Jing and Yumin Tan}
+}
